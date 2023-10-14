@@ -1,0 +1,339 @@
+@RULE N6
+
+@TABLE
+
+# Golly rule-table format.
+# Each rule: C,N,NE,E,SE,S,SW,W,NW,C'
+#
+# Default for transitions not listed: no change
+#
+# Variables are bound within each transition. 
+# For example, if a={1,2} then 4,a,0->a represents
+# two transitions: 4,1,0->1 and 4,2,0->2
+# (This is why we need to repeat the variables below.
+#  In this case the method isn't really helping.)
+
+n_states:19
+neighborhood:Moore
+symmetries:none
+
+var x31={1,3}
+
+var aX={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18}
+var bX={aX}
+var cX={aX}
+var dX={aX}
+var eX={aX}
+var fX={aX}
+var gX={aX}
+var hX={aX}
+
+var a10={0,1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18}
+var b10={a10}
+var c10={a10}
+var d10={a10}
+var e10={a10}
+var f10={a10}
+var g10={a10}
+var h10={a10}
+
+var a11={0,1,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18}
+var b11={a11}
+var c11={a11}
+var d11={a11}
+var e11={a11}
+var f11={a11}
+var g11={a11}
+var h11={a11}
+
+var a12={0,1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18}
+var b12={a12}
+var c12={a12}
+var d12={a12}
+var e12={a12}
+var f12={a12}
+var g12={a12}
+var h12={a12}
+
+var a13={0,1,2,3,4,5,6,7,8,9,10,11,12,14,15,16,17,18}
+var b13={a13}
+var c13={a13}
+var d13={a13}
+var e13={a13}
+var f13={a13}
+var g13={a13}
+var h13={a13}
+
+var a14={0,1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,18}
+var b14={a14}
+var c14={a14}
+var d14={a14}
+var e14={a14}
+var f14={a14}
+var g14={a14}
+var h14={a14}
+
+var a15={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,16,17,18}
+var b15={a15}
+var c15={a15}
+var d15={a15}
+var e15={a15}
+var f15={a15}
+var g15={a15}
+var h15={a15}
+
+#Gate Stop
+8,0,0,15,0,18,0,2,0,0
+
+1,aX,bX,cX,dX,eX,fX,gX,hX,3
+4,aX,bX,cX,dX,eX,fX,gX,hX,1
+5,aX,bX,cX,dX,eX,fX,gX,hX,1
+6,aX,bX,cX,dX,eX,fX,gX,hX,1
+7,aX,bX,cX,dX,eX,fX,gX,hX,1
+
+3,aX,bX,cX,0,0,0,4,0,4
+3,aX,bX,cX,dX,4,fX,0,hX,4
+
+3,aX,bX,cX,0,0,0,6,0,6
+3,aX,bX,cX,dX,6,fX,0,hX,6
+
+3,aX,bX,cX,0,0,0,7,0,7
+
+0,aX,bX,cX,dX,4,0,0,hX,3
+0,aX,bX,cX,dX,0,0,4,0,3
+
+3,aX,bX,x31,0,0,fX,5,0,5
+3,x31,bX,cX,0,0,fX,5,0,5
+3,x31,bX,cX,dX,5,0,gX,hX,5
+3,x31,bX,cX,dX,5,1,gX,hX,5
+
+3,0,bX,0,dX,0,fX,5,hX,0
+3,aX,bX,cX,dX,5,fX,0,hX,0
+
+0,aX,bX,cX,dX,6,0,0,hX,2
+2,aX,bX,cX,dX,6,0,0,hX,17
+17,aX,bX,cX,dX,6,0,0,hX,16
+
+0,0,0,0,0,7,1,0,0,3
+
+#wireworld rules: 
+8,aX,bX,cX,dX,eX,fX,gX,hX,2
+10,aX,bX,cX,dX,eX,fX,gX,hX,8
+11,aX,bX,cX,dX,eX,fX,gX,hX,8
+12,aX,bX,cX,dX,eX,fX,gX,hX,8
+13,aX,bX,cX,dX,eX,fX,gX,hX,8
+14,aX,bX,cX,dX,eX,fX,gX,hX,8
+15,aX,bX,cX,dX,eX,fX,gX,hX,8
+
+2,a10,b10,c10,d10,e10,f10,g10,10,10
+2,a10,b10,c10,d10,e10,f10,10,h10,10
+2,a10,b10,c10,d10,e10,10,g10,h10,10
+2,a10,b10,c10,d10,10,f10,g10,h10,10
+2,a10,b10,c10,10,e10,f10,g10,h10,10
+2,a10,b10,10,d10,e10,f10,g10,h10,10
+2,a10,10,c10,d10,e10,f10,g10,h10,10
+2,10,b10,c10,d10,e10,f10,g10,h10,10
+
+2,a11,b11,c11,d11,e11,f11,g11,11,11
+2,a11,b11,c11,d11,e11,f11,11,h11,11
+2,a11,b11,c11,d11,e11,11,g11,h11,11
+2,a11,b11,c11,d11,11,f11,g11,h11,11
+2,a11,b11,c11,11,e11,f11,g11,h11,11
+2,a11,b11,11,d11,e11,f11,g11,h11,11
+2,a11,11,c11,d11,e11,f11,g11,h11,11
+2,11,b11,c11,d11,e11,f11,g11,h11,11
+
+2,a12,b12,c12,d12,e12,f12,g12,12,12
+2,a12,b12,c12,d12,e12,f12,12,h12,12
+2,a12,b12,c12,d12,e12,12,g12,h12,12
+2,a12,b12,c12,d12,12,f12,g12,h12,12
+2,a12,b12,c12,12,e12,f12,g12,h12,12
+2,a12,b12,12,d12,e12,f12,g12,h12,12
+2,a12,12,c12,d12,e12,f12,g12,h12,12
+2,12,b12,c12,d12,e12,f12,g12,h12,12
+
+2,a13,b13,c13,d13,e13,f13,g13,13,13
+2,a13,b13,c13,d13,e13,f13,13,h13,13
+2,a13,b13,c13,d13,e13,13,g13,h13,13
+2,a13,b13,c13,d13,13,f13,g13,h13,13
+2,a13,b13,c13,13,e13,f13,g13,h13,13
+2,a13,b13,13,d13,e13,f13,g13,h13,13
+2,a13,13,c13,d13,e13,f13,g13,h13,13
+2,13,b13,c13,d13,e13,f13,g13,h13,13
+
+
+2,a14,b14,c14,d14,e14,f14,g14,14,14
+2,a14,b14,c14,d14,e14,f14,14,h14,14
+2,a14,b14,c14,d14,e14,14,g14,h14,14
+2,a14,b14,c14,d14,14,f14,g14,h14,14
+2,a14,b14,c14,14,e14,f14,g14,h14,14
+2,a14,b14,14,d14,e14,f14,g14,h14,14
+2,a14,14,c14,d14,e14,f14,g14,h14,14
+2,14,b14,c14,d14,e14,f14,g14,h14,14
+
+2,a15,b15,c15,d15,e15,f15,g15,15,15
+2,a15,b15,c15,d15,e15,f15,15,h15,15
+2,a15,b15,c15,d15,e15,15,g15,h15,15
+2,a15,b15,c15,d15,15,f15,g15,h15,15
+2,a15,b15,c15,15,e15,f15,g15,h15,15
+2,a15,b15,15,d15,e15,f15,g15,h15,15
+2,a15,15,c15,d15,e15,f15,g15,h15,15
+2,15,b15,c15,d15,e15,f15,g15,h15,15
+
+
+#rules for transforming shadows to real photons
+#0,0,b10,c10,d10,0,0,10,0,4
+0,0,0,0,0,0,0,14,0,3
+3,0,0,cX,0,0,0,15,0,9
+3,0,b10,c10,d10,0,0,10,0,4
+3,0,b10,c10,d10,0,0,11,0,5
+3,0,b10,c10,d10,0,0,12,0,6
+3,0,b10,c10,d10,0,0,13,0,7
+
+#Auto-Expander:
+16,aX,bX,cX,dX,eX,fX,gX,hX,2
+0,0,0,cX,0,0,fX,16,0,16
+0,0,0,16,dX,0,0,gX,0,16
+
+#Gate Start/Stop
+0,0,0,2,0,17,0,14,0,14
+17,0,2,0,0,0,0,0,14,18
+
+
+
+@NAMES
+
+# these state names are not yet used by Golly
+0 Background
+1 Photon Tail
+2 Material (Orange)
+3 Wire (Green)
+4 Action Extend 
+5 Action Retract
+6 Action Deposit
+7 Action Left
+8 Shadow Photon Tail
+
+9 Stop Marker (this is placed at the start of the green arm when we stop) (was 26)
+
+10 Shadow of 4
+11 Shadow of 5
+12 Shadow of 6
+13 Shadow of 7
+
+14 "Shadow" Action Start (was 24)
+15 "Shadow" Action Stop  (was 25)
+
+16 Auto-Expander
+17 Gate Start 
+18 Gate Stop  
+
+@COLORS
+
+0  48  48  48   dark gray
+1 255 255 255   white
+2 255 128   0   orange
+3   0 255 128   Green
+4 255   0   0   Red
+5 255 255   0   Yellow
+6   0 128 255   Light Blue
+7 128 128 255   Purple
+8 128 128 128   Grey
+9   0   0 255   Blue
+10 128  0   0   Dark Red
+11 128 128  0   Dark Yellow  
+12 0   64 128   Dark Blue
+13 64  64 128   Dark Purple
+14 255 0 0      Red
+15 255 255 0    Yellow
+16 128 128 255   Purple
+17 0 255 128   Green
+18 255 0 0      Red  
+
+@ICONS
+
+# icon info is in XPM format (order is not important)
+
+XPM
+/* width height num_colors chars_per_pixel */
+"31 31 5 1"
+/* colors */
+". c #000000"
+"D c #404040"
+"C c #808080"
+"B c #C0C0C0"
+"W c #FFFFFF"
+/* pixels */
+"..............................."
+"..............................."
+"..........DCBWWWWWBCD.........."
+".........CWWWWWWWWWWWC........."
+".......DWWWWWWWWWWWWWWWD......."
+"......BWWWWWWWWWWWWWWWWWB......"
+".....BWWWWWWWWWWWWWWWWWWWB....."
+"....DWWWWWWWWWWWWWWWWWWWWWD...."
+"....WWWWWWWWWWWWWWWWWWWWWWW...."
+"...CWWWWWWWWWWWWWWWWWWWWWWWC..."
+"..DWWWWWWWWWWWWWWWWWWWWWWWWWD.."
+"..CWWWWWWWWWWWWWWWWWWWWWWWWWC.."
+"..BWWWWWWWWWWWWWWWWWWWWWWWWWB.."
+"..WWWWWWWWWWWWWWWWWWWWWWWWWWW.."
+"..WWWWWWWWWWWWWWWWWWWWWWWWWWW.."
+"..WWWWWWWWWWWWWWWWWWWWWWWWWWW.."
+"..WWWWWWWWWWWWWWWWWWWWWWWWWWW.."
+"..WWWWWWWWWWWWWWWWWWWWWWWWWWW.."
+"..BWWWWWWWWWWWWWWWWWWWWWWWWWB.."
+"..CWWWWWWWWWWWWWWWWWWWWWWWWWC.."
+"..DWWWWWWWWWWWWWWWWWWWWWWWWWD.."
+"...CWWWWWWWWWWWWWWWWWWWWWWWC..."
+"....WWWWWWWWWWWWWWWWWWWWWWW...."
+"....DWWWWWWWWWWWWWWWWWWWWWD...."
+".....BWWWWWWWWWWWWWWWWWWWB....."
+"......BWWWWWWWWWWWWWWWWWB......"
+".......DWWWWWWWWWWWWWWWD......."
+".........CWWWWWWWWWWWC........."
+"..........DCBWWWWWBCD.........."
+"..............................."
+"..............................."
+
+XPM
+/* width height num_colors chars_per_pixel */
+"15 15 4 1"
+/* colors */
+". c #000000"
+"D c #404040"
+"B c #C0C0C0"
+"W c #FFFFFF"
+/* pixels */
+"..............."
+"....DBWWWBD...."
+"...BWWWWWWWB..."
+"..BWWWWWWWWWB.."
+".DWWWWWWWWWWWD."
+".BWWWWWWWWWWWB."
+".WWWWWWWWWWWWW."
+".WWWWWWWWWWWWW."
+".WWWWWWWWWWWWW."
+".BWWWWWWWWWWWB."
+".DWWWWWWWWWWWD."
+"..BWWWWWWWWWB.."
+"...BWWWWWWWB..."
+"....DBWWWBD...."
+"..............."
+
+XPM
+/* width height num_colors chars_per_pixel */
+"7 7 4 1"
+/* colors */
+". c #000000"
+"D c #404040"
+"E c #E0E0E0"
+"W c #FFFFFF"
+/* pixels */
+".DEWED."
+"DWWWWWD"
+"EWWWWWE"
+"WWWWWWW"
+"EWWWWWE"
+"DWWWWWD"
+".DEWED."
